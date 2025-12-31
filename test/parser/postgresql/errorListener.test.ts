@@ -86,4 +86,12 @@ describe('PostgreSQL validate invalid sql and test msg', () => {
         expect(errors.length).toBe(1);
         expect(errors[0].message).toBe(`'a' 在此位置无效，期望一个存在的procedure或者一个关键字`);
     });
+
+    test('validate unComplete sql5 cn', () => {
+        const errors = pgSQL.validate(sql5);
+        expect(errors.length).toBe(1);
+
+        console.log(errors);
+        // expect(errors[0].message).toBe(`'a' 在此位置无效，期望一个存在的procedure或者一个关键字`);
+    });
 });

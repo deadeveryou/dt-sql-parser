@@ -105,10 +105,13 @@ export abstract class ParseErrorListener implements ANTLRErrorListener {
                         expectedText.length ? `{expecting}${expectedText}` : ''
                     }`;
                 }
-                if (msg.includes('missing')) {
+                // miss keyword
+                const missKeywords = ['mismatched', 'missing'];
+                const misswords = missKeywords.find((keyword) => msg.includes(keyword));
+                if (missKeywords) {
                     const regex = /missing\s+'([^']+)'/;
                     const match = msg.match(regex);
-                    message = `{missing}`;
+                    message = `{${misswords}}`;
                     if (match) {
                         const missKeyword = match[1];
                         message += `'${missKeyword}'`;

@@ -26,6 +26,8 @@ export enum StmtContextType {
     INSERT_STMT = 'insertStmt',
     CREATE_FUNCTION_STMT = 'createFunctionStmt',
     ALTER_TABLE_STMT = 'alterTableStmt',
+
+    // promql
 }
 
 export interface StmtContext {
@@ -61,11 +63,17 @@ export function toStmtContext(
  * @key comment: entity's comment attribute
  * @key colType: column entity's type attribute
  * @key alias: entity's alias attribute
+ * @key aggregation_operator: aggregation operator attribute
+ * @key label_name: label name attribute
+ * @key range_time: range time attribute
  * */
 export enum AttrName {
     comment = '_comment',
     colType = '_colType',
     alias = '_alias',
+    aggregationOperator = '_aggregationOperator',
+    labelName = '_labelName',
+    rangeTime = '_rangeTime',
 }
 /**
  * ParserRuleContext with custom attributes

@@ -15,6 +15,8 @@ export {
     TrinoSqlVisitor,
     ImpalaSqlParserListener,
     ImpalaSqlParserVisitor,
+    PromQLParserListener,
+    PromQLParserVisitor,
 } from './lib';
 
 export { EntityContextType } from './parser/common/types';
