@@ -14,7 +14,8 @@
     "mysql",
     "postgresql",
     "trino",
-    "impala"
+    "impala",
+    "promql"
   ],
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -30,6 +31,7 @@
     "watch": "tsc -w",
     "check-types": "tsc -p ./tsconfig.json && tsc -p ./test/tsconfig.json",
     "test": "NODE_OPTIONS=--max_old_space_size=4096 && jest",
+    "test:promql": "NODE_OPTIONS=--max_old_space_size=4096 && jest test/parser/promql/errorListener.test.ts --watch",
     "release": "node ./scripts/release.js",
     "prettier-check": "prettier --check .",
     "format": "prettier --write .",

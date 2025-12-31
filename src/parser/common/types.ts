@@ -48,6 +48,24 @@ export enum EntityContextType {
     TABLE_PROPERTY_KEY = 'tablePropertyKey',
     /** table property value when creating table*/
     TABLE_PROPERTY_VALUE = 'tablePropertyValue',
+
+    // promql
+    /** metric name */
+    METRIC = 'metric', // 指标名称
+    LABEL = 'label', // 标签名称
+    DURATION = 'duration', // 时间范围
+    AGGREGATION = 'aggregation', // 聚合操作
+}
+
+// 实体类型定义
+export interface PromQLEntity {
+    type: 'METRIC' | 'LABEL' | 'FUNCTION' | 'AGGREGATION';
+    name: string;
+    range?: string; // 仅适用于范围向量
+    startLine: number;
+    startColumn: number;
+    endLine: number;
+    endColumn: number;
 }
 
 /**
